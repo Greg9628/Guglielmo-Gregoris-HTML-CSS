@@ -75,7 +75,7 @@ p, h2, h3, h4, h5, a{
     position: absolute;
     top: 0;
     right: 0;
-    background: ("/Guglielmo-Gregoris-HTML-CSS/assets/img/photoBuilding.jpg") no-repeat center center/cover; 
+    background: url("/Guglielmo-Gregoris-HTML-CSS/assets/img/photoBuilding.jpg") no-repeat center center/cover; 
     background-attachment: fixed;
     height: 700px;
     width:100%;
