@@ -10,9 +10,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <title>Guglielmo Gregoris</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('YOUR_USER_ID');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+        function setbg(color)
+        {
+        document.getElementById("styled").style.background=color
+        }
+    </script>
   </head>
   <body>
-
     <!--     INIZIO NAVBAR-->    
     <nav class="navbar navbar-expand-md navbar-dark bg-dark position-navbar navbar-custom" aria-label="Fourth navbar example">
       <div class="container">
@@ -76,10 +102,10 @@
                 Mi ritengo abile nella fotografia, studioso per quanto riguarda il front-end per tale motivo sto costruendo un percorso in questo meraviglioso universo che è la programmazione. 
               </p>
               <div class="d-flex justify-content-center sm">
-                <a href="https://www.linkedin.com/in/guglielmo-gregoris-526186124/" class="card-link text-decoration-none text-secondary"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.facebook.com/guglielmo.gregoris/" class="card-link text-decoration-none text-secondary"><i class="fab fa-facebook"></i></i></a>
-                <a href="https://gitlab.com/guglielmogregoris.gg" class="card-link text-decoration-none text-secondary "><i class="fab fa-gitlab"></i></a>
-                <a href="https://www.instagram.com/guglielmogregoris/" class="card-link text-decoration-none text-secondary"><i class="fab fa-instagram"></i>
+                <a href="https://www.linkedin.com/in/guglielmo-gregoris-526186124/" target="_blank" class="card-link text-decoration-none text-secondary"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/guglielmo.gregoris/" target="_blank" class="card-link text-decoration-none text-secondary"><i class="fab fa-facebook"></i></i></a>
+                <a href="https://gitlab.com/guglielmogregoris.gg" target="_blank"  class="card-link text-decoration-none text-secondary "><i class="fab fa-gitlab"></i></a>
+                <a href="https://www.instagram.com/guglielmogregoris/" target="_blank" class="card-link text-decoration-none text-secondary"><i class="fab fa-instagram"></i>
                 </a>
               </div>
             </div>
@@ -115,7 +141,7 @@
               </div>
           </div>
           <div class="col-9 col-md-3 col-lg-4 col-xl-3 col-hover position-relative p-0">
-              <img class="img-fluid image" src="assets/img/mirrorsGlasses.jpg" alt="">
+              <img class="img-fluid image" src="assets/img/mirrorGlasses.jpg" alt="">
               <div class="overlay">
                 <div class="text">Londra - Inghilterra <br> 2018</div>
               </div>
@@ -283,19 +309,24 @@
               </h6>
               <p>
                 Grazie per essere arrivato fin qui! <br> Spero che il mio sito ti sia piaciuto, tieniamoci in contatto!
-                
               </p>
             </div>
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-              <h6 class="text-uppercase fw-bold mb-4 mt-3"><i class="far fa-id-card"></i>
+              <h6 class="text-uppercase fw-bold mb-4 mt-3"> <i class="fas fa-envelope"></i></i>
                 Contatti
               </h6>
-              <p><i class="fas fa-home me-3 d-flex justify-content-start"></i>Spilimbergo, PN , 33097</p>
               <p>
-                <i class="fas fa-envelope me-3 d-flex justify-content-start"></i>
-                guglielmogregoris.gg@gmail.com
+                <form id="contact-form">
+                  <input type="hidden" name="contact_number">
+                  <label class="d-flex justify-content-start">Nome e Cognome</label>
+                  <input type="text" name="user_name">
+                  <label class="d-flex justify-content-start mt-2">Email</label>
+                  <input type="email" name="user_email">
+                  <label class="d-flex justify-content-start mt-2">Messagio</label>
+                  <textarea style="resize: none;" name="styled-textarea" id="styled" onfocus="this.value=''; setbg('#F1F1F1');" onblur="setbg('white')" ></textarea> 
+                  <input class="d-flex justify-content-center btn mt-2" type="submit" value="Invia">
+              </form>
               </p>
-              <p><i class="fas fa-phone me-3 d-flex justify-content-start"></i>3467941610</p>
             </div>
           </div>
         </div>

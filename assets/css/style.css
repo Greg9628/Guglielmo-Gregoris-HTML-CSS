@@ -212,10 +212,13 @@ p, h2, h3, h4, h5, a{
   background-color: #212529;
 }
 
-.logos {
-  
+textarea#styled {
+	width: 400px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
 }
-/* 
-.colo {
-  text-align: center;
-} */
