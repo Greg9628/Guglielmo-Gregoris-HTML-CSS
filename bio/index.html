@@ -78,52 +78,61 @@
 </div>
 <!--  FINE BIOGRAFIA -->
 <!--  INIZIO FOOTER -->
-<footer class="text-center text-lg-start text-muted mt-5 footer-custom">
-    <!-- INIZIO SEZIONE SOCIAL MEDIA -->
-        <section
-        class="d-flex justify-content-center justify-content-lg-between border-bottom logos">
-        <div class="container-fluid d-flex justify-content-center">
-        <div class="sm">
-            <a href="https://www.linkedin.com/in/guglielmo-gregoris-526186124/" target="_blank" class="card-link text-decoration-none text-white me-4"><i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.facebook.com/guglielmo.gregoris/" target="_blank" class="card-link text-decoration-none text-white me-4"><i class="fab fa-facebook"></i></i></a>
-            <a href="https://github.com/Greg9628?tab=repositories" target="_blank"  class="card-link text-decoration-none text-white me-4"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/guglielmogregoris/" target="_blank" class="card-link text-decoration-none text-white me-4"><i class="fab fa-instagram"></i>
-            </a>
-        </div>
-        </div>
-        <!-- FINE SEZIONE SOCIAL MEDIA -->
-        </section>
+    <footer class="text-center text-lg-start text-muted mt-5 footer-custom">
+        <!-- INIZIO SEZIONE SOCIAL MEDIA -->
+            <section
+            class="d-flex justify-content-center justify-content-lg-between border-bottom logos">
+            <div class="container-fluid d-flex justify-content-center">
+            <div class="sm">
+                <a href="https://www.linkedin.com/in/guglielmo-gregoris-526186124/" target="_blank" class="card-link text-decoration-none text-white me-4"><i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.facebook.com/guglielmo.gregoris/" target="_blank" class="card-link text-decoration-none text-white me-4"><i class="fab fa-facebook"></i></i></a>
+                <a href="https://github.com/Greg9628?tab=repositories" target="_blank"  class="card-link text-decoration-none text-white me-4"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/guglielmogregoris/" target="_blank" class="card-link text-decoration-none text-white me-4"><i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            </div>
+            <!-- FINE SEZIONE SOCIAL MEDIA -->
+            </section>
         <section class="pb-5">
-        <div class="container text-center text-md-start mt-5">
-            <div class="row mt-3">
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                <h6 class="text-uppercase fw-bold mb-4 mt-3"><i class="far fa-smile-wink"></i>
-                Ringraziamenti
-                </h6>
-                <p>
-                Grazie per essere arrivato fin qui! <br> Spero che il mio sito ti sia piaciuto, tieniamoci in contatto!
-                </p>
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4 mt-3"><i class="far fa-smile-wink"></i>
+                        Ringraziamenti
+                        </h6>
+                        <p>
+                        Grazie per essere arrivato fin qui! <br> Spero che il mio sito ti sia piaciuto, tieniamoci in contatto!
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 col-sm-2 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4 mt-3"> <i class="fas fa-envelope"></i></i>
+                        Contatti
+                        </h6>
+                        <p>
+                            <form id="contact-form">
+                                <input type="hidden" name="contact_number">
+                                <label class="text-start mt-2 mb-2">Nome e Cognome</label>
+                                <input class="w-100" type="text" name="user_name">
+                                <label class="text-start mt-2 mb-2">Email</label>
+                                <input class="w-100" type="email" name="user_email">
+                                <label class="text-start mt-2 mb-2">Messagio</label>
+                                <textarea style="resize: none; width: 100%;" name="styled-textarea" id="styled" onfocus="this.value=''; setbg('#F1F1F1');" onblur="setbg('white')" ></textarea> 
+                                <input class="mt-2 button text-decoration-none" type="submit" value="Invia">
+                                <div id="popup1" class="overlay" name="overlay">
+                                    <div class="popup">
+                                        <h4 class="text-dark">Grazier per avermi contattato!</h4>
+                                        <div class="close border-0 bg-transparent" id="close">&times;</div>
+                                        <div class="content text-dark">
+                                            Ti ricontatterò appena possibile.
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 col-xl-3 col-sm-2 mx-auto mb-md-0 mb-4">
-                <h6 class="text-uppercase fw-bold mb-4 mt-3"> <i class="fas fa-envelope"></i></i>
-                Contatti
-                </h6>
-                <p>
-                <form id="contact-form">
-                    <input type="hidden" name="contact_number">
-                    <label class="text-center mt-2 mb-2">Nome e Cognome</label>
-                    <input type="text" name="user_name">
-                    <label class="text-center mt-2 mb-2">Email</label>
-                    <input type="email" name="user_email">
-                    <label class="text-center mt-2 mb-2">Messagio</label>
-                    <textarea style="resize: none;" name="styled-textarea" id="styled" onfocus="this.value=''; setbg('#F1F1F1');" onblur="setbg('white')" ></textarea> 
-                    <input class="d-flex justify-content-center btn mt-2" type="submit" value="Invia">
-                </form>
-                </p>
-            </div>
-            </div>
-        </div>
         </section>
     </footer>
     <!-- FINE FOOTER -->
