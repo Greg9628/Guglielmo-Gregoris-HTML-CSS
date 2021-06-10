@@ -11,6 +11,42 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 <link rel="shortcut icon" href="../assets/img/processing.ico">
 <title>Guglielmo Gregoris</title>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/integration
+        emailjs.init('user_e8hUgfpyOwpuqOKuz0An5');
+    })();
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = Math.random() * 100000 | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm('service_vwlwbqh', 'template_heb7swa', this)
+                .then(function() {
+                    document.getElementsByName('overlay').forEach(tag=>{tag.style.opacity = '1'});
+                    document.getElementsByName('overlay').forEach(tag=>{tag.style.visibility = 'visible'});
+                    document.getElementsByName('user_name').forEach(input => {input.value = ''});
+                    document.getElementsByName('user_email').forEach(input => {input.value = ''});
+                    document.getElementsByName('styled-textarea').forEach(input => {input.value = ''});
+                    console.log('SUCCESS!');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+        });
+        document.getElementById('close').addEventListener('click', ()=>{
+            document.getElementsByName('overlay').forEach(tag=>{tag.style.opacity = '0'});
+            document.getElementsByName('overlay').forEach(tag=>{tag.style.visibility = 'hidden'});
+        })
+    }
+    function setbg(color)
+    {
+    document.getElementById('styled').style.background=color;
+    }
+</script>
 </head>
 <body>
 <!--     INIZIO NAVBAR-->    
@@ -40,7 +76,7 @@
 <!--   FINE NAVBAR -->
 
 <!-- inizio BIOGRAFIA -->
-<div class="container-fluid  bio-margin">
+<div class="container-fluid bio-margin">
     <div class="row">
     <div class="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
     <h3 class="text-center">Biografia</h3>
@@ -48,7 +84,7 @@
     </div>
     </div>
 </div>
-<div class="container-fluid d-flex justify-content-center mt-3">
+<div class="container-fluid d-flex justify-content-center mt-3 bio-margin">
     <div class="card mb-3 shadow" style="max-width: 800px;">
     <div class="row g-0">
         <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4">
@@ -95,7 +131,7 @@
             <!-- FINE SEZIONE SOCIAL MEDIA -->
             </section>
         <section class="pb-5">
-            <div class="container text-center text-md-start mt-5">
+            <div class="container text-center text-md-start">
                 <div class="row mt-3">
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <h6 class="text-uppercase fw-bold mb-4 mt-3"><i class="far fa-smile-wink"></i>
